@@ -15,6 +15,7 @@ const thoughtController = {
   // get a single thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
+    // populate reactions to thought
       .populate({ path: 'reaction', select: '-__v' })
       .select('-__v')
       .then((thoughtDB) => {
@@ -37,10 +38,12 @@ const thoughtController = {
   },
   // update a thought
   updateThought(req, res) {
-    Thought.findOneAndUpdate({ _id: req.params.thoughtId }, 
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId }, 
       { $set: req.body },
       { runValidators: true, new: true }
     )
+  // populate reactions to thought
     .populate({ path: 'reaction', select: '-__v' })
     .select('-__v')
     .then(thoughtDB => {
@@ -71,6 +74,7 @@ const thoughtController = {
       { $push: {reactions: req.params.body} },
       { runValidators: true, new: true }
     )
+  // populate reactions to thought
     .populate({ path: 'reaction', select: '-__v' })
     .select('-__v')
     .then(thoughtDB => {
