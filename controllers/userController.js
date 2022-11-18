@@ -90,7 +90,7 @@ const userController = {
   },
   // remove a friend
   removeFriend(req, res) {
-    Thought.findOneAndUpdate(
+    User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friends: req.params.friendId } },
       { new: true }
