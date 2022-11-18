@@ -1,5 +1,5 @@
-const moment = require('moment/moment');
 const { Schema, model, Types } = require('mongoose');
+const moment = require('moment/moment');
 
 const reactionSchema = new Schema(
   {
@@ -28,7 +28,7 @@ const reactionSchema = new Schema(
     },
     id: false,
   }
-)
+);
 
 const thoughtSchema = new Schema(
   {
@@ -58,6 +58,6 @@ const thoughtSchema = new Schema(
   }
 );
 
-const Thought = model('thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
