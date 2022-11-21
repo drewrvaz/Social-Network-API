@@ -16,7 +16,7 @@ const thoughtController = {
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
     // populate reactions to thought
-      .populate({ path: 'reaction', select: '-__v' })
+      .populate({ path: 'reactions', select: '-__v' })
       .select('-__v')
       .then((thoughtDB) => {
         if (!thoughtDB) {
@@ -50,7 +50,7 @@ const thoughtController = {
       { runValidators: true, new: true }
     )
   // populate reactions to thought
-    .populate({ path: 'reaction', select: '-__v' })
+    .populate({ path: 'reactions', select: '-__v' })
     .select('-__v')
     .then(thoughtDB => {
       if(!thoughtDB) {
@@ -81,7 +81,7 @@ const thoughtController = {
       { runValidators: true, new: true }
     )
   // populate reactions to thought
-    .populate({ path: 'reaction', select: '-__v' })
+    .populate({ path: 'reactions', select: '-__v' })
     .select('-__v')
     .then(thoughtDB => {
       if(!thoughtDB) {
