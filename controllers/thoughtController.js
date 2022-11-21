@@ -25,7 +25,10 @@ const thoughtController = {
         }
         res.json(thoughtDB)
       })
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        res.status(500).json(err);
+        console.log(err);
+      });
   },
   // create a thought
   createThought(req, res) {
