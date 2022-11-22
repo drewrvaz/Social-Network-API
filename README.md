@@ -10,6 +10,7 @@
 * [Questions](#questions)
 ## Description
 The goal of htis project was to build an API for a social network application where users can share their thoughts, react to friends' thoughts, and create a friend list. In this project, I used Express.js, MongoDB, Mongoose ODM, Moment.js, Node.js. The entire project is written in Javascript, and requires an application like Insomnia for testing. It was a lot of fun to challenge myself building a project like this one.
+Video of the project: https://drive.google.com/file/d/1-bLMHgLDe6zHljoDdMEJ5uzTzq8MlNVq/view
 ## Installation
 Clone the repository from Github. `npm i` to install all of the required dependencies, then `node index.js` to get it running. As I said in the description, you will need a third party application like insomnia in order to test the project.
 ## Usage
